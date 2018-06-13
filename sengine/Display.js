@@ -22,7 +22,7 @@ class Display {
 	}
 
 	clear() {
-		this.context.clear(true);
+		this.context.clearRect(0, 0, this.getWidth(), this.getHeight());
 	}
 
 	setDisplayId(displayId) {

@@ -3,8 +3,8 @@ var Config = {
 	row_number 		: 15,
 	max_width 		: 600,
 	max_heighh 		: 800,
-	cell_white_color: '#e9ebee',
-	cell_black_color: '#f6f7f9'
+	cell_white_color: '#FFF',
+	cell_black_color: '#555'
 }
 
 module.exports = Config;

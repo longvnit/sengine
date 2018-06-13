@@ -40,10 +40,13 @@ window.onload = function() {
 	var board = new Board(Config.col_number, Config.row_number, 50 * Config.col_number, 50 * Config.row_number);
 	//console.log(board);
 
+
+	sengine.Display.clear();
 	//sengine.Graphic.drawFillRec(10, 10, 100, 100, 'red');
 
 	let cells = board.getCells();
 	let sequenceColor;
+	let color;
 	if(cells.length > 0) {
 		for(let i = 0; i < cells.length; i++) {
 			let cellRow = cells[i];
@@ -63,9 +66,15 @@ window.onload = function() {
 					sequenceColor = Config.cell_white_color;
 				}
 
+				color = sequenceColor;
+
+				if(i == (Math.floor((Math.random() * 10) + 1)) && j == 4) {
+					color = 'green';
+				}
+
 				console.log(sequenceColor);
 
-				sengine.Graphic.drawFillRec(x, y, w, h, sequenceColor);
+				sengine.Graphic.drawFillRec(x, y, w, h, color);
 			}
 		}
 	}
