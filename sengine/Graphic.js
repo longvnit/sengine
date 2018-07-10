@@ -33,7 +33,7 @@ class Graphic {
 		this.context.fillText(str, x, y);
 	}
 
-	drawRec(x, y, w, h, lineWidth, color) {
+	drawRect(x, y, w, h, lineWidth, color) {
 		this.context.beginPath();
 		if(lineWidth !== undefined) {
 			this.context.lineWidth = lineWidth;
@@ -47,7 +47,7 @@ class Graphic {
 		this.context.stroke();
 	}
 
-	drawFillRec(x, y, w, h, color) {
+	drawFillRect(x, y, w, h, color) {
 		if(color !== undefined) {
 			this.context.fillStyle = color;
 		}
@@ -59,6 +59,29 @@ class Graphic {
 		var img = new Image();
 		img.src = src;
 		this.context.drawImage(img, x, y, w, h);
+	}
+
+	drawRec(x, y, radius, start, end, lineWidth, color) {
+		// start 0 is Math.PI / - 2
+		// end 360 = Math.PI / - 2
+		// percent = (2 * Math.PI * percent / 100) + (Math.PI / - 2)
+
+		if(start === 0) {
+			start = Math.PI / - 2;
+		}
+
+		this.context.beginPath();
+		if(lineWidth !== undefined) {
+			this.context.lineWidth = lineWidth;
+		}
+
+		if(color !== undefined) {
+			this.context.color = color;
+		}
+
+		ctx.arc(x, y, radius, start, end, false);
+
+		this.context.stroke();
 	}
 }
 

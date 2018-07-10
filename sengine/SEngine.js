@@ -26,6 +26,15 @@ class SEngine {
 
 	}
 
+	setRender(render) {
+		this.Display.setRender(render);
+	}
+
+	run() {
+		//this.Display.isPlaying = false;
+		this.Display.render(this.Display);
+	}
+
 	debug() {
 
 	}

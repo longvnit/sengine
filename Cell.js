@@ -37,6 +37,14 @@ class Cell {
 		return this.moveSign;
 	}
 
+	setColor(color) {
+		this.color = color;
+	}
+
+	getColor() {
+		return this.color;
+	}
+
 	isChecked() {
 		if(this.moveSign !== undefined) {
 			return true;
